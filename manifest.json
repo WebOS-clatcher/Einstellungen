@@ -1,0 +1,32 @@
+{
+    "content_scripts": [
+        {
+            "js": [
+                "inject.js"
+            ],
+            "matches": [
+                "https://web-os.freedev.app/*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "description": "Einstellungen Layer für Clatcher",
+    "icons": {
+        "128": "favicon.png"
+    },
+    "manifest_version": 3,
+    "name": "Einstellungen",
+    "permissions": [
+    ],
+    "version": "1.0",
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "https://web-os.freedev.app/*"
+            ],
+            "resources": [
+                "index.js"
+            ]
+        }
+    ]
+}
