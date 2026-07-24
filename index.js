@@ -97,20 +97,18 @@ class Settings extends Layer {
                 else {
                     new Toast(response.info).show();
                 }
-
-                this.avatarUpload.disabled = false;
-                this.avatarUpload.textContent = "Senden";
-                this.avatarCurrentFile.textContent = "Keine Datei ausgewählt";
-                this.avatar.value = "";
             };
 
             xhr.onerror = () => {
                 new Toast("Fehler beim Upload").show();
-                this.avatarUpload.disabled = false;
-                this.avatarUpload.textContent = "Senden";
-                this.avatarCurrentFile.textContent = "Keine Datei ausgewählt";
-                this.avatar.value = "";
             };
+
+			xhr.onloadend = () => {
+				this.avatarUpload.disabled = false;
+				this.avatarUpload.textContent = "Senden";
+				this.avatarCurrentFile.textContent = "Keine Datei ausgewählt";
+				this.avatar.value = "";
+			};
 
             xhr.send(fd);
         });
@@ -181,20 +179,18 @@ class Settings extends Layer {
                 else {
                     new Toast(response.info).show();
                 }
-
-                this.backgroundUpload.disabled = false;
-                this.backgroundUpload.textContent = "Senden";
-                this.backgroundCurrentFile.textContent = "Keine Datei ausgewählt";
-                this.background.value = "";
             }
 
             xhr.onerror = () => {
                 new Toast("Fehler beim Upload").show();
-                this.backgroundUpload.disabled = false;
-                this.backgroundUpload.textContent = "Senden";
-                this.backgroundCurrentFile.textContent = "Keine Datei ausgewählt";
-                this.background.value = "";
             };
+
+			xhr.onloadend = () => {
+				this.backgroundUpload.disabled = false;
+				this.backgroundUpload.textContent = "Senden";
+				this.backgroundCurrentFile.textContent = "Keine Datei ausgewählt";
+				this.background.value = "";
+			};
 
             xhr.send(fd);
         });
@@ -265,20 +261,18 @@ class Settings extends Layer {
                 else {
                     new Toast(response.info).show();
                 }
-
-                this.headerUpload.disabled = false;
-                this.headerUpload.textContent = "Senden";
-                this.headerCurrentFile.textContent = "Keine Datei ausgewählt";
-                this.header.value = "";
             };
 
             xhr.onerror = () => {
                 new Toast("Fehler beim Upload").show();
-                this.headerUpload.disabled = false;
-                this.headerUpload.textContent = "Senden";
-                this.headerCurrentFile.textContent = "Keine Datei ausgewählt";
-                this.header.value = "";
             };
+
+			xhr.onloadend = () => {
+				this.headerUpload.disabled = false;
+				this.headerUpload.textContent = "Senden";
+				this.headerCurrentFile.textContent = "Keine Datei ausgewählt";
+				this.header.value = "";
+			};
 
             xhr.send(fd);
         });
